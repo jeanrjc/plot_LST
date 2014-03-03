@@ -158,7 +158,7 @@ def plot_locus(dic_data, N_genes, size, treedata=[], tree=False, circ=False, ann
 		x_pos, y_pos,ratio = treedata[0],treedata[1], treedata[2]
 
 		#/!\/!\ >> you can switch a locus according to the following condition : 		
-		if "cas1" not in [config[k] for k in keys_data[:3]] : # If cas1 gene, not at the beginning of the locus : switch the locus. You can change that condition.
+		if "cas1" in [config[k] for k in keys_data[-3:]] : # If cas1 gene, in the 3 last genes of the locus : switch the locus. You can change that condition.
 		
 			deb = dic_data[keys_data[-1]][1]
 			fin = dic_data[keys_data[0]][0]
