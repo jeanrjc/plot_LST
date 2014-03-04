@@ -26,6 +26,8 @@ import re
 
 try:
 	import matplotlib.pyplot as plt
+	import matplotlib as mpl
+	mpl.rcParams['pdf.fonttype'] = 42 # Allows text to be read as text in Illustrator
 except ImportError:
 	print ">>>>>> Need Matplotlib 1.3.0"
 	sys.exit(0)
