@@ -196,17 +196,19 @@ def plot_locus(dic_data, N_genes, size, treedata=[], tree=False, circ=False, ann
 # 		ax.set_xbound(deb-10, fin+10)
 		
 	if legend:
-		n=[]
+		n = []
 		for i in classes:
-			n.append(ax.bar(0,0,zorder=0,color=col_classes[i]))
-		plt.legend(n,classes,loc=(1.015,0.2))
+			n.append(ax.bar(0, 0, zorder=0, color=col_classes[i]))
+		plt.legend(n, classes, loc=(1.015,0.2))
 	if not circ and not tree:
 		ax.set_ybound( -5, 5)
 	# 	ax.set_xbound(deb-10, fin+10)
+
 	if not tree_mode:
 		plt.show()
-	
-	return g
+		plt.savefig(ID + ".pdf")
+	else:
+		return g
 
 def no_tree_mode(dic_data, ID, N_genes, size, annotations = annotations, circ = circ):
 	"""Function for basic use (see usage() function)"""
@@ -285,6 +287,7 @@ def tree_opt(id_tree, indiv=None, annotations = annotations, circ=circ):
 		ax.set_xlim(ax.get_xlim()[0], ax.get_xlim()[1] + biggest_locus*ratio + (ax.get_xlim()[1]+biggest_locus*ratio)*25/100.)   
 	
 		plt.show()
+		plt.savefig(id_tree + ".pdf")
 		return dic_data,data,locus_instance
 		
 def classes_config(ID):
@@ -307,7 +310,7 @@ def classes_config(ID):
 	col_classes = {}
 	for s in classes:
 		col_classes[s] = next(cgen)
-	col_classes[0] = "lightgrey" # color for genes not in the config files.
+	col_classes[0] = "grey" # color for genes not in the config files.
 	
 	return config, col_classes, legend, classes
 
@@ -363,7 +366,7 @@ if __name__ == "__main__" :
 			else:
 				print ">>>>>>> Unknown option\n\n", usage()
 				sys.exit(0)
-			corr-=1
+			corr -= 1
 		
 
 	
