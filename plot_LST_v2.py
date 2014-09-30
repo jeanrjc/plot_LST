@@ -18,7 +18,7 @@ PATH_TO_LST = "/net/abigfour/gembases/Prokaryotes_1113a/LSTINFO/"
 
 tree_mode = False
 annotations = False
-circ= False
+circ = False
 
 ############################## Import ##############################
 import sys
