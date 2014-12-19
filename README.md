@@ -13,9 +13,9 @@ where
 
 If an id.config file exist, it will color the genes as many colors as there are classes in the .config file which is formatted as follow :
 
-   GENE001c01 classe1
-   GENE002c01 classe2
-   GENE003c01 classe1
+    GENE001c01 classe1
+    GENE002c01 classe2
+    GENE003c01 classe1
   
   
 # with annotations 
